@@ -73,7 +73,7 @@ public class HelloWorld extends PApplet
 		
 		// This line makes the map interactive
 		MapUtils.createDefaultEventDispatcher(this, map1);
-		
+	
 		// TODO: Add code here that creates map2 
 		// Then you'll modify draw() below
 		map2 = new UnfoldingMap(this, 400, 50, 350, 500, provider);
