@@ -8,16 +8,16 @@ import de.fhpotsdam.unfolding.utils.MapUtils;
  */
 public class OfflineMapApp extends PApplet {
 
-	public static String mbTilesString = "blankLight-1-3.mbtiles";
+	public static String mbTilesString = "blankLight-1-3.mbtiles";   //이게 지도인가?
 
 	UnfoldingMap map;
 
 	public void setup() {
-		size(800, 600, OPENGL);
+		size(800, 600, OPENGL);   //OpenGraphics 를 쓰겠다.
 
-		map = new UnfoldingMap(this, new MBTilesMapProvider(mbTilesString));
+		map = new UnfoldingMap(this, new MBTilesMapProvider(mbTilesString));  //지도다.
 		MapUtils.createDefaultEventDispatcher(this, map);
-		map.setZoomRange(1, 3);
+		map.setZoomRange(1, 3);  //Zoom 사이즈가 1에서 3이
 	}
 
 	public void draw() {

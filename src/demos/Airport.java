@@ -1,5 +1,5 @@
-package demos;
-
+package demos;   //하나의 패캐
+   
 /** A class to represent Airport data.
  * Used in module 6 of the UC San Diego MOOC Object Oriented Programming in Java
  * 
@@ -7,7 +7,7 @@ package demos;
  * 
  *
  */
-public class Airport implements Comparable<Airport> {
+public class Airport implements Comparable<Airport> {  //Comparable의 용도가 Collections sort하려고 만든거 같다.
 	private int airportID;
 	private String name;
 	private String city;
@@ -76,7 +76,7 @@ public class Airport implements Comparable<Airport> {
 	
 	public int compareTo(Airport other)
 	{
-		return this.city.compareTo(other.city);
+		return this.city.compareTo(other.city);   //이게 중요하다 비교해서 정렬하려고 만든 것이다.
 	}
 	
 }

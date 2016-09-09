@@ -16,7 +16,7 @@ import java.util.HashMap;
 import de.fhpotsdam.unfolding.marker.Marker;
 
 /**
- * Visualizes life expectancy in different countries. 
+ * Visualizes life expectancy in different countries. 인구수에 따라 색깔을다르게 표현하구
  * 
  * It loads the country shapes from a GeoJSON file via a data reader, and loads the population density values from
  * another CSV file (provided by the World Bank). The data value is encoded to transparency via a simplistic linear
@@ -31,11 +31,11 @@ public class LifeExpectancy extends PApplet {
 
 	public void setup() {
 		size(800, 600, OPENGL);
-		map = new UnfoldingMap(this, 50, 50, 700, 500, new Google.GoogleMapProvider());
+		map = new UnfoldingMap(this, 50, 50, 700, 500, new Google.GoogleMapProvider());  //여기까지 다 배운
 		MapUtils.createDefaultEventDispatcher(this, map);
 
 		// Load lifeExpectancy data
-		lifeExpMap = loadLifeExpectancyFromCSV("LifeExpectancyWorldBankModule3.csv");
+		lifeExpMap = loadLifeExpectancyFromCSV("LifeExpectancyWorldBankModule3.csv");  //CSV 이건 어디서 나온거여?
 		println("Loaded " + lifeExpMap.size() + " data entries");
 		
 
@@ -49,7 +49,7 @@ public class LifeExpectancy extends PApplet {
 	}
 
 	public void draw() {
-		// Draw map tiles and country markers
+		// Draw map tiles and country markers  그냥 그리는거
 		map.draw();
 	}
 
@@ -57,14 +57,14 @@ public class LifeExpectancy extends PApplet {
 	//Red-orange indicates low (near 40)
 	//Blue indicates high (near 100)
 	private void shadeCountries() {
-		for (Marker marker : countryMarkers) {
+		for (Marker marker : countryMarkers) {  //마커로 어떻게 하겠다는거지.
 			// Find data for country of the current marker
-			String countryId = marker.getId();
+			String countryId = marker.getId();    
 			if (lifeExpMap.containsKey(countryId)) {
 				float lifeExp = lifeExpMap.get(countryId);
 				// Encode value as brightness (values range: 40-90)
 				int colorLevel = (int) map(lifeExp, 40, 90, 10, 255);
-				marker.setColor(color(255-colorLevel, 100, colorLevel));
+				marker.setColor(color(255-colorLevel, 100, colorLevel));  //색깔이 바꼇군.
 			}
 			else {
 				marker.setColor(color(150,150,150));
@@ -85,7 +85,7 @@ public class LifeExpectancy extends PApplet {
 			// we just use a comma here, and ignore the fact that the first field is split.
 			String[] columns = row.split(",");
 			if (columns.length == 6 && !columns[5].equals("..")) {
-				lifeExpMap.put(columns[4], Float.parseFloat(columns[5]));
+				lifeExpMap.put(columns[4], Float.parseFloat(columns[5]));  //parse에 대해서 공부해야겠는데해쉬맵이
 			}
 		}
 

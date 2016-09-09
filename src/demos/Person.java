@@ -21,7 +21,7 @@ public class Person
 	  
 	public String toString()      
 	{ 
-		return name; 
+		return name;     //이게 핵심이다.
 	}
 
 	public void status( int hr )

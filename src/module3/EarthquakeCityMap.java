@@ -24,8 +24,8 @@ import parsing.ParseFeed;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
- * Date: July 17, 2015
+ *Son MYUNG JUN
+ * Date: July 17, 2016
  * */
 public class EarthquakeCityMap extends PApplet {
 
@@ -35,18 +35,18 @@ public class EarthquakeCityMap extends PApplet {
 	// IF YOU ARE WORKING OFFLINE, change the value of this variable to true
 	private static final boolean offline = false;
 	
-	// Less than this threshold is a light earthquake
+	// Less than this threshold is a light earthquake  5로 기준을 잡는
 	public static final float THRESHOLD_MODERATE = 5;
-	// Less than this threshold is a minor earthquake
+	// Less than this threshold is a minor earthquake  4로 기준을 잡는다.
 	public static final float THRESHOLD_LIGHT = 4;
 
-	/** This is where to find the local tiles, for working without an Internet connection */
+	/** This is where to find the local tiles, for working without an Internet connection */ //오프라
 	public static String mbTilesString = "blankLight-1-3.mbtiles";
 	
 	// The map
 	private UnfoldingMap map;
 	
-	//feed with magnitude 2.5+ Earthquakes
+	//feed with magnitude 2.5+ Earthquakes  //?? feed는 뭘까???  가지고 오는건가?
 	private String earthquakesURL = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
 
 	

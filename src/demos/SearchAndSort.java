@@ -38,7 +38,7 @@ public class SearchAndSort {
 			String country = data[3];
 			String code3 = data[4];
 			String code4 = data[5];
-			double lat = Double.parseDouble(data[6]);
+			double lat = Double.parseDouble(data[6]);   //파스 이렇게 한다 정도?
 			double lon = Double.parseDouble(data[7]);
 			int alt = Integer.parseInt(data[8]);
 			float tz = Float.parseFloat(data[9]);
